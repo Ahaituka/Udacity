@@ -1,0 +1,82 @@
+/* Initial Template*/
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff;
+    font-family: "Roboto", sans-serif;
+    color: #4e4e4e;
+}
+
+.header-line {
+  border-bottom: solid 3px #809ab1;
+  width: 100%;
+}
+
+/* Styling For Headera*/
+
+h1,
+h2 {
+    line-height: 1.0;
+    margin-top: 0;
+    margin-bottom: .4rem;
+    font-family: "Lato", sans-serif;
+    color: #4e4e4e;
+}
+
+h1 {
+    color: #7a757a;
+    font-size: 50px;
+    margin-bottom: 5px;
+}
+
+header {
+    padding-top: 10px;
+}
+
+header .flex-container {
+    max-width: 1000px;
+    display: flex;
+    position: relative;
+}
+
+.main-title {
+    width: 90%;
+    text-align: right;
+    float: right;
+}
+
+.designation {
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 21px;
+}
+
+.logo {
+    background: url("../images/pic.jpg") ;
+    background-size: cover;
+    border-radius: 50%;
+    width: 81px;
+    height: 81px;
+    float: left;
+}
+
+.flex-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+/*Media Queries*/
+/*For devices with width b/w 0 to 610px*/
+@media screen and (max-width: 610px) {
+    h1,
+    h2 {
+        font-size: 1.5em
+    }
+}
