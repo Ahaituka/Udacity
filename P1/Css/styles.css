@@ -14,11 +14,11 @@ body {
 }
 
 .header-line {
-  border-bottom: solid 3px #809ab1;
-  width: 100%;
+    border-bottom: solid 3px #809ab1;
+    width: 100%;
 }
 
-/* Styling For Headera*/
+/* Styling For Headeras*/
 
 h1,
 h2 {
@@ -58,7 +58,7 @@ header .flex-container {
 }
 
 .logo {
-    background: url("../images/pic.jpg") ;
+    background: url("../images/pic.jpg");
     background-size: cover;
     border-radius: 50%;
     width: 81px;
@@ -72,11 +72,58 @@ header .flex-container {
     padding: 10px 20px;
 }
 
+/* Ending for Stying of  Headers */
+
+/* Styling For Featured Work*/
+
+img {
+    max-width: 100%;
+}
+
+.featured {
+    font-size: 2.0em;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    text-transform: uppercase;
+}
+
+/* End of Styling For Featured Work*/
+
+/* Styling For Project Cards */
+
+.content-container {
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.link ,
+.title {
+    display: block;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.image
+{
+    margin-bottom: 10px;
+    height: 250px;
+}
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+}
+/* End of Styling For Project Cards*/
+
 /*Media Queries*/
+
 /*For devices with width b/w 0 to 610px*/
+
 @media screen and (max-width: 610px) {
     h1,
     h2 {
         font-size: 1.5em
     }
 }
+
