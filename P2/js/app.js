@@ -1,7 +1,7 @@
 /*
  * Create a list that holds all of your cards
  */
-var allcards= ["fa-diamond", "fa-paper-plane-o", "fa-anchor", "fa-bolt", "fa-cube", "fa-leaf", "fa-bicycle", "fa-bomb","fa-diamond", "fa-paper-plane-o", "fa-anchor", "fa-bolt", "fa-cube", "fa-leaf", "fa-bicycle", "fa-bomb"];
+var allCards = ["fa-diamond", "fa-paper-plane-o", "fa-anchor", "fa-bolt", "fa-cube", "fa-leaf", "fa-bicycle", "fa-bomb", "fa-diamond", "fa-paper-plane-o", "fa-anchor", "fa-bolt", "fa-cube", "fa-leaf", "fa-bicycle", "fa-bomb"];
 
 
 
@@ -15,30 +15,30 @@ var allcards= ["fa-diamond", "fa-paper-plane-o", "fa-anchor", "fa-bolt", "fa-cub
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
+  var currentIndex = array.length, temporaryValue, randomIndex;
 
-    while (currentIndex !== 0) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
-    }
+  while (currentIndex !== 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
 
-    return array;
+  return array;
 }
 // loop through each card and create its HTML
 
 function generateHtml() {
-    var cardList = shuffle(allcards);
-    cardList.forEach(function(card) {
-      $(".deck").append('<li><i class="card fa ' + card + '"></i></li>');
-    })
-  }
+  var cardList = shuffle(allCards);
+  cardList.forEach(function (card) {
+    $(".deck").append('<li><i class="card fa ' + card + '"></i></li>');
+  })
+}
 
 //Initial Calling
-  shuffle(cards);
-  generateHtml();
+shuffle(allCards);
+generateHtml();
 
 
 /*
