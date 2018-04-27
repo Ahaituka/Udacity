@@ -27,8 +27,18 @@ function shuffle(array) {
 
     return array;
 }
+// loop through each card and create its HTML
 
+function generateHtml() {
+    var cardList = shuffle(allcards);
+    cardList.forEach(function(card) {
+      $(".deck").append('<li><i class="card fa ' + card + '"></i></li>');
+    })
+  }
 
+//Initial Calling
+  shuffle(cards);
+  generateHtml();
 
 
 /*
