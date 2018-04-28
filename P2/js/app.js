@@ -3,7 +3,10 @@
  */
 var allCards = ["fa-diamond", "fa-paper-plane-o", "fa-anchor", "fa-bolt", "fa-cube", "fa-leaf", "fa-bicycle", "fa-bomb", "fa-diamond", "fa-paper-plane-o", "fa-anchor", "fa-bolt", "fa-cube", "fa-leaf", "fa-bicycle", "fa-bomb"];
 
-
+//Declaring necessary variables for further usage
+var cardList = []; 
+var movesCount = 0; //to count number of moves
+var matchesCount = 0; //to count number of matches
 
 
 /*
@@ -36,11 +39,6 @@ function generateHtml() {
   })
 }
 
-//Initial Calling
-shuffle(allCards);
-generateHtml();
-
-
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
@@ -51,3 +49,53 @@ generateHtml();
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
+
+// Logic to find matching cards
+function Click() {
+  // Displaying cards symbol
+  $(".card").on("click", function () {
+    if ($(this).hasClass("open show")) { return; }
+    //toggling the class
+    $(this).toggleClass("open show");
+    //adding to empty array for further checking
+    cardList.push($(this));
+    var length = cardList.length;
+    if (length == 2) {
+      var firstCard = cardList[0][0];
+      var secondCard = cardList[1][0];
+      if (firstCard.classList[2] === secondCard.classList[2]) { //Checking if same symbol clicked
+        firstCard.classList.add("match");
+        secondCard.classList.add("match");
+        $(cardList[0]).off('click'); //disabling further clicking on mathced cards
+        $(cardList[1]).off('click');
+        matchesCount++;
+        movesCount++;
+        cardList = [];
+        if (matchesCount === 8) {
+          //create the result function
+        }
+
+      }
+      else {
+        //No match add incorrect class
+        firstCard.classList.add("incorrect");
+        secondCard.classList.add("incorrect");
+       //resetting everything
+        window.setTimeout(clearAll, 1100);
+        movesCount++;
+      }
+    }
+    $("#moves").text(movesCount.toString());
+  })
+}
+
+function clearAll() {
+  $(".card").removeClass("incorrect show open");
+  cardList = [];
+}
+
+
+//Initial Calling
+shuffle(allCards);
+generateHtml();
+Click();
