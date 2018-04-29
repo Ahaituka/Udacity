@@ -4,7 +4,7 @@
 var allCards = ["fa-diamond", "fa-paper-plane-o", "fa-anchor", "fa-bolt", "fa-cube", "fa-leaf", "fa-bicycle", "fa-bomb", "fa-diamond", "fa-paper-plane-o", "fa-anchor", "fa-bolt", "fa-cube", "fa-leaf", "fa-bicycle", "fa-bomb"];
 
 //Declaring necessary variables for further usage
-var cardList = []; 
+var cardList = []; // to keep track of open cards
 var movesCount = 0; //to count number of moves
 var matchesCount = 0; //to count number of matches
 
@@ -72,7 +72,8 @@ function Click() {
         movesCount++;
         cardList = [];
         if (matchesCount === 8) {
-          //create the result function
+          //display the final score
+          finalScore();
         }
 
       }
@@ -80,7 +81,7 @@ function Click() {
         //No match add incorrect class
         firstCard.classList.add("incorrect");
         secondCard.classList.add("incorrect");
-       //resetting everything
+        //resetting everything
         window.setTimeout(clearAll, 1100);
         movesCount++;
       }
@@ -89,13 +90,51 @@ function Click() {
   })
 }
 
+//clear al the classes
 function clearAll() {
   $(".card").removeClass("incorrect show open");
   cardList = [];
 }
 
 
+
+//display the final score
+function finalScore() {
+  $('#sucess-result').empty();
+  var scoreBoard = `
+      <center>
+      <p> Congratulations </p>
+      <p>
+          <span>Moves:${movesCount}</span>
+      </p>
+      </center>
+      <div>
+           <div class="rating">
+              <i class="fa fa-star fa-3x"></i>
+           </div>
+           <div class="rating">
+              <i class="fa ${ (movesCount > 25) ? "fa-star-o" : "fa-star"}  fa-3x"></i>
+           </div>
+          <div class="rating">
+              <i class="fa ${ (movesCount > 15) ? "fa-star-o" : "fa-star"} fa-3x"></i>
+           </div>
+      </div>
+      <div id="restart">
+          <i class="fa fa-repeat fa-3x"></i>
+        </div>
+  `;
+  $('.container')[0].style.display = "none";
+  $('#sucess-result').append($(scoreBoard));
+  $("#restart").on("click", function () { //reset the game
+    location.reload()
+  });
+}
+
+
+
+
+
+
 //Initial Calling
-shuffle(allCards);
 generateHtml();
 Click();
