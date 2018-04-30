@@ -128,3 +128,11 @@ h1 {
     top: 20%;
     left: 50%;
 }
+
+.moves {
+    margin-right: 10%;
+}
+
+.finalTime {
+    margin: 10px;
+}

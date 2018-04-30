@@ -7,6 +7,10 @@ var allCards = ["fa-diamond", "fa-paper-plane-o", "fa-anchor", "fa-bolt", "fa-cu
 var cardList = []; // to keep track of open cards
 var movesCount = 0; //to count number of moves
 var matchesCount = 0; //to count number of matches
+var seconds = 0;
+var minutes = 0;
+
+
 
 
 /*
@@ -122,6 +126,7 @@ function finalScore() {
               <i class="fa ${ (movesCount > 15) ? "fa-star-o" : "fa-star"} fa-3x"></i>
            </div>
       </div>
+      <p  >Time : ${minutes} min :${seconds} sec</p>
       <div id="restart">
           <i class="fa fa-repeat fa-3x"></i>
         </div>
@@ -147,7 +152,29 @@ $("#restart").on("click", function () { //reset the game
   location.reload()
 });
 
+//Timer Function
+function timer() {
+  setInterval(function () {
+    seconds += 1;
+
+    if (seconds > 60) {
+      seconds = 0;
+      minutes += 1;
+    }
+    if (seconds < 10) {
+      time = minutes + ':0' + seconds;
+    }
+    else {
+      time = minutes + ':' + seconds;
+
+    }
+    $('.time').text(time);
+  }, 1000);
+  return;
+}
+
 
 //Initial Calling
 generateHtml();
+timer();
 Click();
