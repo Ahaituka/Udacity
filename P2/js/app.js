@@ -70,6 +70,7 @@ function Click() {
         $(cardList[1]).off('click');
         matchesCount++;
         movesCount++;
+        updateStars();
         cardList = [];
         if (matchesCount === 8) {
           //display the final score
@@ -84,6 +85,8 @@ function Click() {
         //resetting everything
         window.setTimeout(clearAll, 1100);
         movesCount++;
+        updateStars();
+
       }
     }
     $("#moves").text(movesCount.toString());
@@ -131,7 +134,16 @@ function finalScore() {
 }
 
 
-
+// Update HTML with number of moves
+function updateStars()
+{
+  if (movesCount >= 15 && movesCount <25) {
+    $("#Two").removeClass("fa-star");
+  } else if (movesCount > 20) {
+    $("#Three").removeClass("fa-star");
+    starRating = "1";
+  }
+}
 
 
 
