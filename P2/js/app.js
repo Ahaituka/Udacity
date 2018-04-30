@@ -128,16 +128,13 @@ function finalScore() {
   `;
   $('.container')[0].style.display = "none";
   $('#sucess-result').append($(scoreBoard));
-  $("#restart").on("click", function () { //reset the game
-    location.reload()
-  });
+
 }
 
 
 // Update HTML with number of moves
-function updateStars()
-{
-  if (movesCount >= 15 && movesCount <25) {
+function updateStars() {
+  if (movesCount >= 15 && movesCount < 25) {
     $("#Two").removeClass("fa-star");
   } else if (movesCount > 20) {
     $("#Three").removeClass("fa-star");
@@ -145,6 +142,10 @@ function updateStars()
   }
 }
 
+//Added Event Listener for restart
+$("#restart").on("click", function () { //reset the game
+  location.reload()
+});
 
 
 //Initial Calling
