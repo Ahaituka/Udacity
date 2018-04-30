@@ -115,7 +115,7 @@ h1 {
     cursor: pointer;
 }
 
-#restart:hover {
+#restart:hover,#restartGame:hover {
     cursor: pointer;
 }
 

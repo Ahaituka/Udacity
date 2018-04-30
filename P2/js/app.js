@@ -127,13 +127,15 @@ function finalScore() {
            </div>
       </div>
       <p  >Time : ${minutes} min :${seconds} sec</p>
-      <div id="restart">
+      <div id="restartGame">
           <i class="fa fa-repeat fa-3x"></i>
         </div>
   `;
   $('.container')[0].style.display = "none";
   $('#sucess-result').append($(scoreBoard));
-
+  $("#restartGame").on("click", function () { //reset the game
+    location.reload()
+  });
 }
 
 
