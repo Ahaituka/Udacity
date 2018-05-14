@@ -63,7 +63,14 @@ Player.prototype.handleInput = function(movement)
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
+var allEnemies = []; //creates an array of Enemies
+(function displayEnemies() {
+    allEnemies.push(new Enemy(-100, 50));
+    allEnemies.push(new Enemy(0, 140));
+    allEnemies.push(new Enemy(-50, 230));
+}());
 // Place the player object in a variable called player
+var player = new Player();
 
 
 
