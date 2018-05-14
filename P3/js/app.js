@@ -1,5 +1,5 @@
 // Enemies our player must avoid
-var Enemy = function(x,y) {
+var Enemy = function (x, y) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
 
@@ -12,11 +12,11 @@ var Enemy = function(x,y) {
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
-Enemy.prototype.update = function(dt) {
+Enemy.prototype.update = function (dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-    if(this.x <= 505) {
+    if (this.x <= 505) {
         this.x = this.x + (150 * dt);
     } else {
         this.x = -10;
@@ -24,7 +24,7 @@ Enemy.prototype.update = function(dt) {
 };
 
 // Draw the enemy on the screen, required method for game
-Enemy.prototype.render = function() {
+Enemy.prototype.render = function () {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
@@ -38,38 +38,47 @@ var Player = function () {
 };
 
 //Player update function
-Player.prototype.update = function() {
+Player.prototype.update = function () {
+    var self = this;
+
     //Player reaches water level
-	if (player.y < 0) {
-	this.reset();
+    if (player.y < 0) {
+        this.reset();
     }
+    //Player collides with Enemy
+    allEnemies.forEach(function (e) {
+        if (self.x >= e.x - 50 && self.x <= e.x + 50) {
+            if (self.y >= e.y - 50 && self.y <= e.y + 50) {
+                self.reset();
+            }
+        }
+    });
 };
 
 //Rendering Player Image
-Player.prototype.render = function() {
+Player.prototype.render = function () {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
 //Movement Control Function
-Player.prototype.handleInput = function(movement)
-{
-    var self =this ;
-    if(movement == 'left' && this.x > 0) {
+Player.prototype.handleInput = function (movement) {
+    var self = this;
+    if (movement == 'left' && this.x > 0) {
         this.x = this.x - 100;
     }
-    if(movement == 'right' && this.x < 400) {
+    if (movement == 'right' && this.x < 400) {
         this.x = this.x + 100;
     }
-    if(movement == 'up' && this.y > 0) {
+    if (movement == 'up' && this.y > 0) {
         this.y = this.y - 100;
     }
-    if(movement == 'down' && this.y < 400) {
+    if (movement == 'down' && this.y < 400) {
         this.y = this.y + 100;
     }
 };
 
 //Reset Game
-Player.prototype.reset = function() {
+Player.prototype.reset = function () {
     this.x = 200;
     this.y = 320;
 };
@@ -91,7 +100,7 @@ var player = new Player();
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
-document.addEventListener('keyup', function(e) {
+document.addEventListener('keyup', function (e) {
     var allowedKeys = {
         37: 'left',
         38: 'up',
