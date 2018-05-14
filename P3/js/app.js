@@ -60,6 +60,12 @@ Player.prototype.handleInput = function(movement)
     }
 };
 
+//Reset Game
+Player.prototype.reset = function() {
+    this.x = 200;
+    this.y = 320;
+};
+
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
