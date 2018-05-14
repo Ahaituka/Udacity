@@ -30,6 +30,36 @@ var Player = function () {
     this.y = 320;
 };
 
+//Player update function
+Player.prototype.update = function() {
+	if (player.y < 0) {
+	this.reset();
+}
+};
+
+//Rendering Player Image
+Player.prototype.render = function() {
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
+
+//Movement Control Function
+Player.prototype.handleInput = function(movement)
+{
+    var self =this ;
+    if(movement == 'left' && this.x > 0) {
+        this.x = this.x - 100;
+    }
+    if(movement == 'right' && this.x < 400) {
+        this.x = this.x + 100;
+    }
+    if(movement == 'up' && this.y > 0) {
+        this.y = this.y - 100;
+    }
+    if(movement == 'down' && this.y < 400) {
+        this.y = this.y + 100;
+    }
+};
+
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
