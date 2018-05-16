@@ -43,6 +43,8 @@ Player.prototype.update = function () {
 
     //Player reaches water level
     if (player.y < 0) {
+        alert("Congratulations You won !");
+
         this.reset();
     }
     //Player collides with Enemy
