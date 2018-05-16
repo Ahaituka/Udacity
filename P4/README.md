@@ -46,3 +46,23 @@ Review the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/pr
 19. Implement error handling for undefined variables and out-of-bound array access.
 20. When complete - all of your tests should pass. 
 21. Write a README file detailing all steps required to successfully run the application. If you have added additional tests (for Udacious Test Coverage),  provide documentation for what these future features are and what the tests are checking for.
+
+## Tests Description :
+
+- all url\'s are defined : a test that loops through each feed in the `allFeeds` object and ensures it has a URL defined and that the URL is not empty.
+
+- all names are defined  : a test that loops through each feed in the `allFeeds` object and ensures it has a name defined and that the name is not empty.
+
+- menu is hiddden: a test that ensures the menu element is hidden by default. You'll have to analyze the HTML and the CSS to determine how we're performing the hiding/showing of the menu element.
+
+- is changes happening : a test that ensures the menu changes visibility when the menu icon is clicked. This test should have two expectations: does the menu display when clicked and does it hide when clicked again.
+
+- there is a single entry : a test that ensures when the `loadFeed` function is called and completes its work, there is at least a single `.entry` element within the `.feed` container.
+
+- content is changed : a test that ensures when a new feed is loaded by the `loadFeed` function that the content actually changes.
+
+## How to Run:
+
+1. [Download](https://codeload.github.com/bitloks/Udacity/zip/master) or [Clone](https://github.com/bitloks/Udacity.git) the Repository.
+2. Open P4->`index.html` file to run the game in your browser.
+
