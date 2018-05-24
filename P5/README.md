@@ -24,5 +24,9 @@ In a terminal, check the version of Python you have: `python -V`. If you have Py
 
 Most of the code in this project has been written to the ES6 JavaScript specification for compatibility with modern web browsers and future proofing JavaScript code. As much as possible, try to maintain use of ES6 in any additional JavaScript you write. 
 
+## How to Run:
 
-
+1. [Download](https://codeload.github.com/bitloks/Udacity/zip/master) or [Clone](https://github.com/bitloks/Udacity.git) the Repository.
+2. Go to the directory
+3. Enter `python3 -m http.server 8000`
+4. Visit http://localhost:8000/
