@@ -1,0 +1,55 @@
+body {
+	margin: 0;
+	font-family: Verdana;
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+}
+
+#map {
+	order: 1;
+	flex-grow: 8;
+	background-color: #fff;
+	text-align: center;
+	height: 1000px;
+}
+
+.cities {
+	order: 2;
+	flex-grow: 1;
+	background-color: black;
+}
+
+.city {
+	border: 1px solid lightgray;
+	cursor: pointer;
+	text-align: center;
+	margin: 15px;
+	padding: 15px;
+	list-style: none;
+	color: white;
+}
+
+input {
+	width: 100%;
+	height: 50px;
+	text-align: center;
+}
+
+li:hover {
+	background-color: rgb(231, 217, 14);
+}
+
+/*For devices with width b/w 0 to 950px*/
+
+@media screen and (max-width: 950px) {
+	.container {
+		flex-direction: column;
+	}
+	.city {
+		font-size: 1.5em;
+	}
+}
