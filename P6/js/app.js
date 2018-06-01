@@ -35,8 +35,8 @@ var windowInfo = null; //information window
 var lastClickedMarker = null; //Track Last Marker
 
 //Foursquare api Keys
-var CLIENT_ID = 'VDTOAQS5NGWHQPQ2B4EXDTQEJD0UZ1WHWDCFXJXUQMCAYPL3';
-var CLIENT_SECRET = 'VPE2ENQLFJAQFM00FL033Q3MYQJMSAZNCBQHFAUXNPPOFXV1';
+var CLIENT_ID = 'YourKey';
+var CLIENT_SECRET = 'YourKey';
 
 onGMapsError = function () {
 	alert('Error loading Google Maps. Please Try Again.');
