@@ -13,12 +13,12 @@
   <header>
     <nav>
       <h1>
-        <a tabindex="0" href="/">Restaurant Reviews</a>
+        <a tabindex="0" href="/" aria-label="Go to Restaurant Reviews">Restaurant Reviews</a>
       </h1>
     </nav>
   </header>
 
-  <main id="maincontent">
+  <main id="maincontent" aria-label="Restaurant Map">
     <section id="map-container">
       <div id="map"></div>
     </section>
@@ -31,7 +31,7 @@
         <select tabindex="2" id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
           <option value="all">All Cuisines</option>
         </select>
-      </div>
+      </div>  
       <ul id="restaurants-list"></ul>
     </section>
   </main>
